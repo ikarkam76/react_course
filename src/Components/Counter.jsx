@@ -1,4 +1,5 @@
 import React from "react";
+import Controls from "./Controls";
 
 class Counter extends React.Component {
     state = {
@@ -19,12 +20,14 @@ class Counter extends React.Component {
     }
     render() {
         return (
-            <div>
-                <span>{this.state.value}</span>
-                <button onClick={this.handleIncrement}>Add</button>
-                <button onClick={this.handleDescrement}>Remove</button>
-            </div>
-        )
+          <div>
+            <span>{this.state.value}</span>
+            <Controls
+              onInc={this.handleIncrement}
+              onDecr={this.handleDescrement}
+            />
+          </div>
+        );
     }
 }
 
